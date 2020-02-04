@@ -12,7 +12,7 @@ const userReducer = (state=null, action) => {
 const wordReducer = (state=null, action) => {
   switch(action.type){
     case "TYPING":
-      return action.word
+      return action.letter
     default:
       return state
   }
