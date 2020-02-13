@@ -24,6 +24,11 @@ export const settingWords = () => {
     let index = Math.floor(Math.random() * (length - 1))
     let randomWord = dict[index]
 
+    let first = dict.slice(0, index)
+    let second = dict.slice(index + 1, dict.length)
+    let newDict = first.concat(second)
+
+    dispatch(setDictionary(newDict))
     dispatch(setWord(randomWord))
   }
 }
