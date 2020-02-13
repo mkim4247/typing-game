@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from './Container'
 import { connect } from 'react-redux'
-import { typeLetter } from '../redux/actions'
+import { typeLetter, settingWords } from '../redux/actions'
 
 class Home extends React.Component {
 
@@ -9,14 +9,19 @@ class Home extends React.Component {
     this.props.typeLetter(event.currentTarget.value)
   }
 
+  handleClick = event => {
+    this.props.settingWords()
+  }
+
   render(){
     return(
       <div>
-        home
+        ---
         <input
           type='text'
           name='word'
           onChange={this.handleChange} />
+        <button onClick={this.handleClick} />
         <Container />
       </div>
     )
@@ -24,4 +29,4 @@ class Home extends React.Component {
 
 }
 
-export default connect(null, { typeLetter })(Home)
+export default connect(null, { typeLetter, settingWords })(Home)

@@ -8,6 +8,7 @@ import { dictionary } from './dictionary.js'
 import { setDictionary } from './redux/actions'
 
 class App extends React.Component {
+
   componentDidMount(){
     this.props.setDictionary(dictionary)
   }

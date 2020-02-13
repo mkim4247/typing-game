@@ -27,10 +27,20 @@ const wordReducer = (state=null, action) => {
   }
 }
 
+const wReducer = (state=null, action) => {
+  switch(action.type){
+    case "SET_WORD":
+      return action.word
+    default:
+      return state
+  }
+}
+
 const rootReducer = combineReducers({
   user: userReducer,
   dictionary: dictionaryReducer,
-  word: wordReducer
+  word: wordReducer,
+  w: wReducer,
 })
 
 export default rootReducer
