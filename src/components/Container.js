@@ -5,7 +5,7 @@ class Container extends React.Component {
   render(){
     return(
       <div>
-        {this.props.word}
+        {this.props.input}
       </div>
     )
   }
@@ -13,7 +13,7 @@ class Container extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    word: state.word
+    input: state.input
   }
 }
 

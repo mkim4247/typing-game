@@ -23,10 +23,21 @@ class Home extends React.Component {
           onChange={this.handleChange} />
         <button onClick={this.handleClick} />
         <Container />
+        {this.props.word ?
+          <div>
+            {this.props.word}
+          </div>
+          : null
+        }
       </div>
     )
   }
-
 }
 
-export default connect(null, { typeLetter, settingWords })(Home)
+const mapStateToProps = state => {
+  return {
+    word: state.word
+  }
+}
+
+export default connect(mapStateToProps, { typeLetter, settingWords })(Home)

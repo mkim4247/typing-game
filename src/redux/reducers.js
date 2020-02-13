@@ -18,16 +18,16 @@ const dictionaryReducer = (state=[], action) => {
   }
 }
 
-const wordReducer = (state=null, action) => {
+const inputReducer = (state=null, action) => {
   switch(action.type){
     case "TYPING":
-      return action.letter
+      return action.input
     default:
       return state
   }
 }
 
-const wReducer = (state=null, action) => {
+const wordReducer = (state=null, action) => {
   switch(action.type){
     case "SET_WORD":
       return action.word
@@ -39,8 +39,8 @@ const wReducer = (state=null, action) => {
 const rootReducer = combineReducers({
   user: userReducer,
   dictionary: dictionaryReducer,
+  input: inputReducer,
   word: wordReducer,
-  w: wReducer,
 })
 
 export default rootReducer
