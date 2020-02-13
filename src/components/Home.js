@@ -19,7 +19,7 @@ class Home extends React.Component {
         ---
         <input
           type='text'
-          name='word'
+          name='input'
           onChange={this.handleChange} />
         <button onClick={this.handleClick} />
         <Container />

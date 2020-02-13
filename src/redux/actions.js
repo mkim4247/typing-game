@@ -4,8 +4,8 @@ export const setUser = user => {
   return { type: "SET_USER", user }
 }
 
-export const typeLetter = letter => {
-  return { type: "TYPING", letter }
+export const typeLetter = input => {
+  return { type: "TYPING", input }
 }
 
 export const setDictionary = dictionary => {
