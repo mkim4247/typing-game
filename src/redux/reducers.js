@@ -9,6 +9,15 @@ const userReducer = (state=null, action) => {
   }
 }
 
+const dictionaryReducer = (state=[], action) => {
+  switch(action.type){
+    case "SET_DICTIONARY":
+      return action.dictionary
+    default:
+      return state
+  }
+}
+
 const wordReducer = (state=null, action) => {
   switch(action.type){
     case "TYPING":
@@ -20,6 +29,7 @@ const wordReducer = (state=null, action) => {
 
 const rootReducer = combineReducers({
   user: userReducer,
+  dictionary: dictionaryReducer,
   word: wordReducer
 })
 

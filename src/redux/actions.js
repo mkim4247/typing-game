@@ -7,3 +7,7 @@ export const setUser = user => {
 export const typeLetter = letter => {
   return { type: "TYPING", letter }
 }
+
+export const setDictionary = dictionary => {
+  return { type: "SET_DICTIONARY", dictionary }
+}
