@@ -1,9 +1,15 @@
 import { combineReducers } from 'redux'
 
-const userReducer = (state=null, action) => {
+const userReducer = (state={points: 0}, action) => {
+  let userCopy;
+
   switch(action.type){
     case "SET_USER":
       return action.user
+    case "ADD_POINT":
+      userCopy = {...state}
+      userCopy.points++
+      return userCopy
     default:
       return state
   }

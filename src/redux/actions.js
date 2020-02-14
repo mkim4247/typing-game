@@ -4,8 +4,24 @@ export const setUser = user => {
   return { type: "SET_USER", user }
 }
 
-export const typeLetter = input => {
+export const typeInput = input => {
   return { type: "TYPING", input }
+}
+
+// NOT FINISHED HERE 
+export const checkInput = () => {
+  return (dispatch, getStore) => {
+    let input = getStore().input
+    let word = getStore().word
+
+    if( input === word ){
+      dispatch(correctInput())
+    }
+  }
+}
+
+export const correctInput = () => {
+  return { type: "ADD_POINT" }
 }
 
 export const setDictionary = dictionary => {

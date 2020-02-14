@@ -1,12 +1,12 @@
 import React from 'react'
 import Container from './Container'
 import { connect } from 'react-redux'
-import { typeLetter, settingWords } from '../redux/actions'
+import { typeInput, settingWords } from '../redux/actions'
 
 class Home extends React.Component {
 
   handleChange = event => {
-    this.props.typeLetter(event.currentTarget.value)
+    this.props.typeInput(event.currentTarget.value)
   }
 
   handleClick = event => {
@@ -40,4 +40,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { typeLetter, settingWords })(Home)
+export default connect(mapStateToProps, { typeInput, settingWords })(Home)
