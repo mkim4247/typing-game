@@ -5,10 +5,12 @@ export const setUser = user => {
 }
 
 export const typeInput = input => {
-  return { type: "TYPING", input }
+  return dispatch => {
+    dispatch({ type: "TYPING", input })
+    dispatch(checkInput())
+  }
 }
 
-// NOT FINISHED HERE 
 export const checkInput = () => {
   return (dispatch, getStore) => {
     let input = getStore().input
