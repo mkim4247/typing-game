@@ -23,6 +23,13 @@ export const checkInput = () => {
 }
 
 export const correctInput = () => {
+  return dispatch => {
+    dispatch(settingWords())
+    dispatch(addPoint())
+  }
+}
+
+export const addPoint = () => {
   return { type: "ADD_POINT" }
 }
 
