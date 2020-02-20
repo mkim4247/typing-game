@@ -17,6 +17,10 @@ class Home extends React.Component {
     return(
       <div>
         ---
+          {this.props.user ?
+            this.props.user.points
+            : null
+          }
         <input
           type='text'
           name='input'
@@ -36,7 +40,8 @@ class Home extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    word: state.word
+    word: state.word,
+    user: state.user
   }
 }
 
