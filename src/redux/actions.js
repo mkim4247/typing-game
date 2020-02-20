@@ -14,11 +14,14 @@ export const typeInput = input => {
 export const checkInput = () => {
   return (dispatch, getStore) => {
     let input = getStore().input
-    let word = getStore().word
+    let words = getStore().words
 
-    if( input === word ){
-      dispatch(correctInput())
-    }
+    words.forEach( word => {
+      if( input === word ){
+        dispatch(correctInput())
+        dispatch(removeWord( word ))
+      }
+    })
   }
 }
 
@@ -29,6 +32,23 @@ export const correctInput = () => {
   }
 }
 
+export const removeWord = word => {
+  return (dispatch, getStore) => {
+    let words = getStore().words
+
+    let index = words.indexOf(word)
+    let first = words.slice(0, index)
+    let second = words.slice(index + 1, words.length)
+    let newWords = first.concat(second)
+
+    dispatch(setWords(newWords))
+  }
+}
+
+export const setWords = words => {
+  return { type: "SET_WORDS", words }
+}
+
 export const addPoint = () => {
   return { type: "ADD_POINT" }
 }
@@ -37,8 +57,8 @@ export const setDictionary = dictionary => {
   return { type: "SET_DICTIONARY", dictionary }
 }
 
-export const setWord = word => {
-  return { type: "SET_WORD", word }
+export const addWord = word => {
+  return { type: "ADD_WORD", word }
 }
 
 export const settingWords = () => {
@@ -54,7 +74,7 @@ export const settingWords = () => {
     let newDict = first.concat(second)
 
     dispatch(setDictionary(newDict))
-    dispatch(setWord(randomWord))
+    dispatch(addWord(randomWord))
   }
 }
 
