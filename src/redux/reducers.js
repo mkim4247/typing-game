@@ -34,9 +34,11 @@ const inputReducer = (state=null, action) => {
 }
 
 const wordsReducer = (state=[], action) => {
+  let wordsCopy;
   switch(action.type){
-    case "SET_WORDS":
-      return action.words
+    case "SET_WORD":
+      wordsCopy = [...state, action.word]
+      return wordsCopy
     default:
       return state
   }

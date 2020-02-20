@@ -2,6 +2,7 @@ import React from 'react'
 import Container from './Container'
 import { connect } from 'react-redux'
 import { typeInput, settingWords } from '../redux/actions'
+import Word from './Word'
 
 class Home extends React.Component {
 
@@ -27,10 +28,10 @@ class Home extends React.Component {
           onChange={this.handleChange} />
         <button onClick={this.handleClick} />
         <Container />
-        {this.props.word ?
-          <div>
-            {this.props.word}
-          </div>
+        {this.props.words ?
+          this.props.words.map( word => (
+            <Word word={word} />
+          ))
           : null
         }
       </div>
@@ -40,7 +41,7 @@ class Home extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    word: state.word,
+    words: state.words,
     user: state.user
   }
 }

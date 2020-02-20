@@ -37,8 +37,8 @@ export const setDictionary = dictionary => {
   return { type: "SET_DICTIONARY", dictionary }
 }
 
-export const setWords = words => {
-  return { type: "SET_WORDS", words }
+export const setWord = word => {
+  return { type: "SET_WORD", word }
 }
 
 export const settingWords = () => {
@@ -54,6 +54,16 @@ export const settingWords = () => {
     let newDict = first.concat(second)
 
     dispatch(setDictionary(newDict))
-    dispatch(setWords(randomWord))
+    dispatch(setWord(randomWord))
+  }
+}
+
+const getRandomWord = () => {
+  return (dispatch, getStore) => {
+    let words = getStore().words
+
+    while (words.length < 10){
+      dispatch(settingWords())
+    }
   }
 }
