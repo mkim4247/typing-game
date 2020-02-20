@@ -37,8 +37,8 @@ export const setDictionary = dictionary => {
   return { type: "SET_DICTIONARY", dictionary }
 }
 
-export const setWord = word => {
-  return { type: "SET_WORD", word }
+export const setWords = words => {
+  return { type: "SET_WORDS", words }
 }
 
 export const settingWords = () => {
@@ -54,6 +54,6 @@ export const settingWords = () => {
     let newDict = first.concat(second)
 
     dispatch(setDictionary(newDict))
-    dispatch(setWord(randomWord))
+    dispatch(setWords(randomWord))
   }
 }
