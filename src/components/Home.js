@@ -3,6 +3,7 @@ import Container from './Container'
 import { connect } from 'react-redux'
 import { typeInput, settingWords } from '../redux/actions'
 import Word from './Word'
+import PlayerContainer from './PlayerContainer'
 
 class Home extends React.Component {
 
