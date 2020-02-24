@@ -29,7 +29,12 @@ export const correctInput = () => {
   return dispatch => {
     dispatch(settingWords())
     dispatch(addPoint())
+    dispatch(clearInput())
   }
+}
+
+export const clearInput = () => {
+  return { type: "CLEAR_INPUT" }
 }
 
 export const removeWord = word => {

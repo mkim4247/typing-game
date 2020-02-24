@@ -28,6 +28,8 @@ const inputReducer = (state=null, action) => {
   switch(action.type){
     case "TYPING":
       return action.input
+    case "CLEAR_INPUT":
+      return ""
     default:
       return state
   }
