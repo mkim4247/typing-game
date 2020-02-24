@@ -26,6 +26,7 @@ class Home extends React.Component {
         <input
           type='text'
           name='input'
+          value={this.props.input}
           onChange={this.handleChange} />
         <button onClick={this.handleClick} />
         <Container />
@@ -43,7 +44,8 @@ class Home extends React.Component {
 const mapStateToProps = state => {
   return {
     words: state.words,
-    user: state.user
+    user: state.user,
+    input: state.input
   }
 }
 
