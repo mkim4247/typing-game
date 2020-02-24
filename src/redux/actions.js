@@ -92,3 +92,7 @@ const getRandomWord = () => {
     }
   }
 }
+
+export const markStrike = () => {
+  return { type: "MARK_STRIKE" }
+}

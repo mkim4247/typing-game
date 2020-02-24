@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-class Container extends React.Component {
+class PlayerInput extends React.Component {
   render(){
     return(
       <div>
@@ -17,4 +17,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(Container)
+export default connect(mapStateToProps)(PlayerInput)

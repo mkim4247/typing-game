@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 
-const userReducer = (state={points: 0}, action) => {
+const userReducer = (state={points: 0, strikes: 0}, action) => {
   let userCopy;
 
   switch(action.type){
@@ -9,6 +9,10 @@ const userReducer = (state={points: 0}, action) => {
     case "ADD_POINT":
       userCopy = {...state}
       userCopy.points++
+      return userCopy
+    case "MARK_STRIKE":
+      userCopy = {...state}
+      userCopy.strikes++
       return userCopy
     default:
       return state
@@ -24,7 +28,7 @@ const dictionaryReducer = (state=[], action) => {
   }
 }
 
-const inputReducer = (state=null, action) => {
+const inputReducer = (state="", action) => {
   switch(action.type){
     case "TYPING":
       return action.input

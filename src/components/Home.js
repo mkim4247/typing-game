@@ -1,9 +1,8 @@
 import React from 'react'
-import Container from './Container'
 import { connect } from 'react-redux'
 import { typeInput, settingWords } from '../redux/actions'
 import Word from './Word'
-import PlayerContainer from './PlayerContainer'
+import PlayerInput from './Player/PlayerInput'
 
 class Home extends React.Component {
 
@@ -29,10 +28,10 @@ class Home extends React.Component {
           value={this.props.input}
           onChange={this.handleChange} />
         <button onClick={this.handleClick} />
-        <Container />
+        <PlayerInput />
         {this.props.words ?
           this.props.words.map( word => (
-            <Word word={word} />
+            <Word word={word} key={word}/>
           ))
           : null
         }
