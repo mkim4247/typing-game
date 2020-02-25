@@ -6,20 +6,25 @@ class Word extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      correct: false
+      correct: false,
+      timer: null
     }
   }
 
   componentDidMount(){
-    const timer = setTimeout(() => {
+    this.state.timer = setTimeout(() => {
       if(this.state.correct){
-        clearTimeout(timer)
+        clearTimeout(this.state.timer)
       }
       else{
         this.props.markStrike()
-        clearTimeout(timer)
+        clearTimeout(this.state.timer)
       }
     }, 5000)
+  }
+
+  componentWillUnmount(){
+    clearTimeout(this.state.timer)
   }
 
   render(){
