@@ -5,13 +5,24 @@ import Word from './Word'
 import PlayerInput from './Player/PlayerInput'
 
 class Home extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      timer: null
+    }
+  }
 
   handleChange = event => {
     this.props.typingInput(event.currentTarget.value)
   }
 
   handleClick = event => {
-    this.props.settingWords()
+    this.state.timer = setInterval(() => this.props.settingWords(), 2000)
+  }
+  FINISH ^^^^^
+
+  componentWillUnmount(){
+    clearTimeout(this.state.timer)
   }
 
   render(){
