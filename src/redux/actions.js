@@ -4,11 +4,15 @@ export const setUser = user => {
   return { type: "SET_USER", user }
 }
 
-export const typeInput = input => {
+export const typingInput = input => {
   return dispatch => {
-    dispatch({ type: "TYPING", input })
+    dispatch(typeInput(input))
     dispatch(checkInput())
   }
+}
+
+export const typeInput = input => {
+  return { type: "TYPING", input }
 }
 
 export const checkInput = () => {

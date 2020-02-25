@@ -1,13 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { typeInput, settingWords } from '../redux/actions'
+import { typingInput, settingWords } from '../redux/actions'
 import Word from './Word'
 import PlayerInput from './Player/PlayerInput'
 
 class Home extends React.Component {
 
   handleChange = event => {
-    this.props.typeInput(event.currentTarget.value)
+    this.props.typingInput(event.currentTarget.value)
   }
 
   handleClick = event => {
@@ -48,4 +48,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { typeInput, settingWords })(Home)
+export default connect(mapStateToProps, { typingInput, settingWords })(Home)
