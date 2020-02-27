@@ -7,19 +7,15 @@ class Word extends React.Component {
     super(props)
     this.state = {
       correct: false,
-      timer: null
+      timer: null,
+      clock: 5
     }
   }
 
   componentDidMount(){
     this.state.timer = setTimeout(() => {
-      if(this.state.correct){
-        clearTimeout(this.state.timer)
-      }
-      else{
-        this.props.markStrike()
-        clearTimeout(this.state.timer)
-      }
+      clearTimeout(this.state.timer)
+      this.props.markStrike()
     }, 5000)
   }
 

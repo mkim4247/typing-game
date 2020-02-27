@@ -32,7 +32,7 @@ export const checkInput = () => {
 export const correctInput = () => {
   return dispatch => {
 
-    // DONT NEED WITH INTERVAL
+    // DONT NEED WITH SETINTERVAL
     // dispatch(settingWords())
 
     dispatch(addPoint())
