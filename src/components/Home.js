@@ -19,7 +19,6 @@ class Home extends React.Component {
   handleClick = event => {
     this.state.timer = setInterval(() => this.props.settingWords(), 2000)
   }
-  FINISH ^^^^^
 
   componentWillUnmount(){
     clearTimeout(this.state.timer)

@@ -31,7 +31,10 @@ export const checkInput = () => {
 
 export const correctInput = () => {
   return dispatch => {
-    dispatch(settingWords())
+
+    // DONT NEED WITH INTERVAL
+    // dispatch(settingWords())
+
     dispatch(addPoint())
     dispatch(clearInput())
   }
